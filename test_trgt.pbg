@@ -3,5 +3,6 @@ Save Format v3.0(19990112)
  "test_trgt.pbl" "";
 @end;
 @begin Objects
+ "w_test.srw" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
 @end;
