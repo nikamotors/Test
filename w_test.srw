@@ -50,8 +50,8 @@ destroy(this.cb_1)
 end on
 
 type st_1 from statictext within w_test
-integer x = 901
-integer y = 156
+integer x = 645
+integer y = 340
 integer width = 571
 integer height = 88
 integer textsize = -10
@@ -63,6 +63,7 @@ string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 67108864
 string text = "nnn"
+alignment alignment = center!
 boolean focusrectangle = false
 end type
 
@@ -78,8 +79,18 @@ fontcharset fontcharset = russiancharset!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Tahoma"
-string text = "none"
+string text = "toggle"
 end type
+
+event clicked;if   st_1.text <> "$$HEX6$$1d043504200042043e042000$$ENDHEX$$" then 
+st_1.text = "$$HEX6$$1d043504200042043e042000$$ENDHEX$$"
+
+else 
+	st_1.text = "nnn"
+	
+end if 
+
+end event
 
 type cb_2 from commandbutton within w_test
 integer x = 731
