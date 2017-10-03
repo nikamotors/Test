@@ -67,8 +67,8 @@ boolean focusrectangle = false
 end type
 
 type cb_3 from commandbutton within w_test
-integer x = 1399
-integer y = 516
+integer x = 736
+integer y = 508
 integer width = 402
 integer height = 112
 integer taborder = 10
@@ -82,8 +82,8 @@ string text = "none"
 end type
 
 type cb_2 from commandbutton within w_test
-integer x = 750
-integer y = 464
+integer x = 731
+integer y = 660
 integer width = 402
 integer height = 112
 integer taborder = 10
