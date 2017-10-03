@@ -84,11 +84,12 @@ end type
 
 event clicked;if   st_1.text <> "$$HEX6$$1d043504200042043e042000$$ENDHEX$$" then 
 st_1.text = "$$HEX6$$1d043504200042043e042000$$ENDHEX$$"
-
+cb_1.text ="$$HEX5$$3d044304200034043004$$ENDHEX$$"
 else 
 	st_1.text = "nnn"
-	
+	cb_1.text ="$$HEX5$$3404300420003d043504$$ENDHEX$$"
 end if 
+
 
 end event
 
@@ -119,6 +120,5 @@ fontcharset fontcharset = russiancharset!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Tahoma"
-string text = "none"
 end type
 
