@@ -36,7 +36,7 @@ global w_test w_test
 
 type variables
 int i 
-
+w_test win
 end variables
 on w_test.create
 this.sle_1=create sle_1
@@ -122,7 +122,16 @@ else
 	cb_1.text ="$$HEX5$$3404300420003d043504$$ENDHEX$$"
 end if 
 i=i+1
-sle_1.text =string(i)
+sle_1.text =string(i) 
+
+if  double(sle_1.text) > 20 then 
+	
+	sle_1.text ="Stop"
+		
+win = this.getparent()
+
+close(win)
+end if 
 end event
 
 type cb_2 from commandbutton within w_test
