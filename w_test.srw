@@ -38,6 +38,7 @@ type variables
 int i 
 w_test win
 end variables
+
 on w_test.create
 this.sle_1=create sle_1
 this.st_1=create st_1
@@ -117,9 +118,13 @@ end type
 event clicked;if   st_1.text <> "$$HEX6$$1d043504200042043e042000$$ENDHEX$$" then 
 st_1.text = "$$HEX6$$1d043504200042043e042000$$ENDHEX$$"
 cb_1.text ="$$HEX5$$3d044304200034043004$$ENDHEX$$"
+cb_1.X =100
+cb_1.Y = 200
 else 
 	st_1.text = "$$HEX3$$220430043a04$$ENDHEX$$"
 	cb_1.text ="$$HEX5$$3404300420003d043504$$ENDHEX$$"
+	cb_1.X = 736 + i*15
+cb_1.Y = 796 - i*5
 end if 
 i=i+1
 sle_1.text =string(i) 
@@ -132,6 +137,8 @@ win = this.getparent()
 
 close(win)
 end if 
+
+
 end event
 
 type cb_2 from commandbutton within w_test
@@ -161,5 +168,6 @@ fontcharset fontcharset = russiancharset!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Tahoma"
+string text = "Change here"
 end type
 
