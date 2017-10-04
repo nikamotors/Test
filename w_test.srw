@@ -124,7 +124,7 @@ else
 	st_1.text = "$$HEX3$$220430043a04$$ENDHEX$$"
 	cb_1.text ="$$HEX5$$3404300420003d043504$$ENDHEX$$"
 	cb_1.X = 736 + i*15
-cb_1.Y = 796 - i*5
+	cb_1.Y = 796 - i*5
 end if 
 i=i+1
 sle_1.text =string(i) 
