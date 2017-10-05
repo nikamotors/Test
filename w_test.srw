@@ -39,7 +39,7 @@ on w_test.destroy
 destroy(this.cb_3)
 end on
 
-event clicked;if abs(cb_3.X - xpos) < 5  then 
+event clicked;if abs(cb_3.X - xpos) < 20  then 
 nearClick = 1  
 		messagebox("$$HEX3$$230440043004$$ENDHEX$$!", "$$HEX27$$12044b04200042043e043b044c043a043e042000470442043e042000320437043b043e043c0430043b04380420003004410443043f04$$ENDHEX$$...")
 end if 
