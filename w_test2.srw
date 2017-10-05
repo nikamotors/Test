@@ -17,6 +17,15 @@ call super::destroy
 end on
 
 type cb_1 from w_test`cb_1 within w_test2
+integer x = 896
+integer y = 208
+integer textsize = -18
+integer weight = 700
+fontcharset fontcharset = defaultcharset!
+fontfamily fontfamily = anyfont!
+string facename = "Tiranti Solid LET"
+boolean italic = true
+boolean flatstyle = true
 end type
 
 type cb_3 from w_test`cb_3 within w_test2
