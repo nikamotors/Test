@@ -2,6 +2,8 @@ HA$PBExportHeader$w_test.srw
 forward
 global type w_test from window
 end type
+type dp_1 from datepicker within w_test
+end type
 type cb_again from commandbutton within w_test
 end type
 type cb_2 from commandbutton within w_test
@@ -17,8 +19,8 @@ end type
 end forward
 
 global type w_test from window
-integer width = 3035
-integer height = 1104
+integer width = 4261
+integer height = 2100
 boolean titlebar = true
 string title = "Untitled"
 boolean controlmenu = true
@@ -29,6 +31,7 @@ long backcolor = 67108864
 string icon = "AppIcon!"
 boolean center = true
 event ue_change pbm_mousemove
+dp_1 dp_1
 cb_again cb_again
 cb_2 cb_2
 st_2 st_2
@@ -71,17 +74,20 @@ cb_3.Y = 0
  st_2.X = 1495
  st_2.Y =	220
  st_2.text =""
-  counter = 0 
+ counter = 0
+  cb_again.Enabled = false
 end subroutine
 
 on w_test.create
+this.dp_1=create dp_1
 this.cb_again=create cb_again
 this.cb_2=create cb_2
 this.st_2=create st_2
 this.st_1=create st_1
 this.cb_1=create cb_1
 this.cb_3=create cb_3
-this.Control[]={this.cb_again,&
+this.Control[]={this.dp_1,&
+this.cb_again,&
 this.cb_2,&
 this.st_2,&
 this.st_1,&
@@ -90,6 +96,7 @@ this.cb_3}
 end on
 
 on w_test.destroy
+destroy(this.dp_1)
 destroy(this.cb_again)
 destroy(this.cb_2)
 destroy(this.st_2)
@@ -104,12 +111,35 @@ nearClick = 1
 end if 
 end event
 
+type dp_1 from datepicker within w_test
+integer x = 1920
+integer y = 1200
+integer width = 686
+integer height = 100
+integer taborder = 50
+boolean border = true
+borderstyle borderstyle = stylelowered!
+boolean allowedit = true
+date maxdate = Date("2999-12-31")
+date mindate = Date("1800-01-01")
+datetime value = DateTime(Date("2017-10-12"), Time("14:31:56.000000"))
+integer textsize = -10
+fontcharset fontcharset = russiancharset!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+integer calendarfontweight = 400
+long calendarbackcolor = 134217728
+boolean todaysection = true
+boolean todaycircle = true
+end type
+
 type cb_again from commandbutton within w_test
-integer x = 1143
+integer x = 1166
 integer y = 680
 integer width = 581
 integer height = 108
-integer taborder = 40
+integer taborder = 30
 integer textsize = -10
 integer weight = 400
 fontcharset fontcharset = russiancharset!
@@ -128,7 +158,7 @@ integer x = 1125
 integer y = 548
 integer width = 663
 integer height = 124
-integer taborder = 30
+integer taborder = 20
 integer textsize = -10
 integer weight = 400
 fontcharset fontcharset = russiancharset!
@@ -152,6 +182,7 @@ fontfamily fontfamily = swiss!
 string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 67108864
+boolean enabled = false
 boolean focusrectangle = false
 end type
 
@@ -168,16 +199,17 @@ fontfamily fontfamily = swiss!
 string facename = "Tahoma"
 long textcolor = 33554432
 long backcolor = 67108864
+boolean enabled = false
 string text = "$$HEX20$$3e044104420430043b043e0441044c0420003f043504400435043c043504490435043d0438043904$$ENDHEX$$:"
 boolean focusrectangle = false
 end type
 
 type cb_1 from commandbutton within w_test
-integer x = 1029
-integer y = 424
-integer width = 800
-integer height = 112
-integer taborder = 20
+integer x = 1006
+integer y = 400
+integer width = 1038
+integer height = 120
+integer taborder = 10
 integer textsize = -10
 integer weight = 400
 fontcharset fontcharset = russiancharset!
@@ -188,6 +220,7 @@ string text = "$$HEX25$$1f04400435043a04400430044204380442044c0420004d0442043e04
 end type
 
 event clicked;close(w_test)
+
 end event
 
 type cb_3 from commandbutton within w_test
@@ -195,7 +228,6 @@ event ue_test pbm_nchittest
 integer y = 8
 integer width = 443
 integer height = 112
-integer taborder = 10
 integer textsize = -10
 integer weight = 400
 fontcharset fontcharset = russiancharset!
@@ -244,5 +276,6 @@ end if
 end event
 
 event clicked;messagebox("$$HEX3$$230440043004$$ENDHEX$$!", "$$HEX27$$12044b04200042043e043b044c043a043e042000470442043e042000320437043b043e043c0430043b04380420003004410443043f04$$ENDHEX$$...")
+cb_again.Enabled = true
 end event
 
