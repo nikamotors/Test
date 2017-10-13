@@ -6,5 +6,6 @@ Save Format v3.0(19990112)
  "w_test.srw" "test_trgt.pbl";
  "m_menu1.srm" "test_trgt.pbl";
  "w_test2.srw" "test_trgt.pbl";
+ "w_test3.srw" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
 @end;
