@@ -9,5 +9,6 @@ Save Format v3.0(19990112)
  "query_remorder.srq" "test_trgt.pbl";
  "w_remorder_ret.srw" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
+ "d_remworks.srd" "test_trgt.pbl";
  "remorderworks.srq" "test_trgt.pbl";
 @end;
