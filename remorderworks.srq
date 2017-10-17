@@ -1,2 +1,0 @@
-HA$PBExportHeader$remorderworks.srq
-PBSELECT( VERSION(400) TABLE(NAME="RemOrderWorks" ) COLUMN(NAME="RemOrderWorks.Id_RemOrder") COLUMN(NAME="RemOrderWorks.Norma") COLUMN(NAME="RemOrderWorks.Quantity") COLUMN(NAME="RemOrderWorks.Price") COLUMN(NAME="RemOrderWorks.EndPrice") COLUMN(NAME="RemOrderWorks.DateOpen")) ARG(NAME = "x" TYPE = numberlist) 
