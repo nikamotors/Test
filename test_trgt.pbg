@@ -5,5 +5,7 @@ Save Format v3.0(19990112)
 @begin Objects
  "w_test.srw" "test_trgt.pbl";
  "m_menu1.srm" "test_trgt.pbl";
+ "query_remorder.srq" "test_trgt.pbl";
+ "w_remorder_ret.srw" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
 @end;
