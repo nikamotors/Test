@@ -58,8 +58,14 @@ string facename = "Tahoma"
 string text = "Ok"
 end type
 
+event clicked;datetime lsdt_date 
+lsdt_date =dp_1.value
+dw_1.setTransObject(SQLCA)
+dw_1.Retrieve(lsdt_date)
+end event
+
 type dp_1 from datepicker within w_remorderclose
-integer x = 2011
+integer x = 1989
 integer y = 40
 integer width = 686
 integer height = 100
@@ -68,7 +74,7 @@ boolean border = true
 borderstyle borderstyle = stylelowered!
 date maxdate = Date("2999-12-31")
 date mindate = Date("1800-01-01")
-datetime value = DateTime(Date("2017-10-17"), Time("10:23:11.000000"))
+datetime value = DateTime(Date("2017-10-17"), Time("10:28:03.000000"))
 integer textsize = -10
 fontcharset fontcharset = russiancharset!
 fontpitch fontpitch = variable!
