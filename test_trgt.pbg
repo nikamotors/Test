@@ -3,6 +3,7 @@ Save Format v3.0(19990112)
  "test_trgt.pbl" "";
 @end;
 @begin Objects
+ "q_works.srq" "test_trgt.pbl";
  "w_test.srw" "test_trgt.pbl";
  "d_remorder_get.srd" "test_trgt.pbl";
  "m_menu1.srm" "test_trgt.pbl";
