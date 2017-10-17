@@ -1,0 +1,2 @@
+HA$PBExportHeader$remorder_query.srq
+PBSELECT( VERSION(400) TABLE(NAME="RemOrder" ) COLUMN(NAME="RemOrder.Id_RemOrder") COLUMN(NAME="RemOrder.Id_Car") COLUMN(NAME="RemOrder.NoBuh") COLUMN(NAME="RemOrder.DateClose")) 
