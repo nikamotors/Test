@@ -8,6 +8,7 @@ Save Format v3.0(19990112)
  "d_remorder_get.srd" "test_trgt.pbl";
  "m_menu1.srm" "test_trgt.pbl";
  "query_remorder.srq" "test_trgt.pbl";
+ "d_remware.srd" "test_trgt.pbl";
  "w_remorder_ret.srw" "test_trgt.pbl";
  "d_remorderworks.srd" "test_trgt.pbl";
  "q_queryware.srq" "test_trgt.pbl";
