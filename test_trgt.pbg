@@ -12,6 +12,7 @@ Save Format v3.0(19990112)
  "d_remorderworks.srd" "test_trgt.pbl";
  "d_remorderwrks.srd" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
+ "d_remwares.srd" "test_trgt.pbl";
  "remorderworks.srq" "test_trgt.pbl";
  "q_selectworks.srq" "test_trgt.pbl";
 @end;
