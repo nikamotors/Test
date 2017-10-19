@@ -1,0 +1,7 @@
+HA$PBExportHeader$s_empl.srs
+global type s_empl from structure
+	string		str_name
+	integer		int_age
+	boolean		is_empl
+end type
+
