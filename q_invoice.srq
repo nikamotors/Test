@@ -1,0 +1,2 @@
+HA$PBExportHeader$q_invoice.srq
+PBSELECT( VERSION(400) TABLE(NAME="SrcInvoice" ) COLUMN(NAME="SrcInvoice.Id_Contract") COLUMN(NAME="SrcInvoice.Id_SrcInvoice") COLUMN(NAME="SrcInvoice.SumInv") COLUMN(NAME="SrcInvoice.CurrentStatus") COLUMN(NAME="SrcInvoice.LastOperator")) ARG(NAME = "dt_arg" TYPE = datetime) 
