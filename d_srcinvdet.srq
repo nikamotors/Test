@@ -1,0 +1,2 @@
+HA$PBExportHeader$d_srcinvdet.srq
+PBSELECT( VERSION(400) TABLE(NAME="SrcInvoiceDetail" ) COLUMN(NAME="SrcInvoiceDetail.Id_SrcInvoice") COLUMN(NAME="SrcInvoiceDetail.Id_Ware") COLUMN(NAME="SrcInvoiceDetail.BeginCost") COLUMN(NAME="SrcInvoiceDetail.EndCost") COLUMN(NAME="SrcInvoiceDetail.FactQuantity") COLUMN(NAME="SrcInvoiceDetail.OutQuantity") COLUMN(NAME="SrcInvoiceDetail.Id_Country")WHERE(    EXP1 ="SrcInvoiceDetail.Id_SrcInvoice"   OP ="="    EXP2 =":id_inv" ) ) ARG(NAME = "id_inv" TYPE = number) 
