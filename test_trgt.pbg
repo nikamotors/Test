@@ -18,4 +18,5 @@ Save Format v3.0(19990112)
  "d_remworks.srd" "test_trgt.pbl";
  "remorderworks.srq" "test_trgt.pbl";
  "q_selectworks.srq" "test_trgt.pbl";
+ "m_desc.srm" "test_trgt.pbl";
 @end;
