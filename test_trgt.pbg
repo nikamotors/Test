@@ -12,11 +12,15 @@ Save Format v3.0(19990112)
  "d_remware.srd" "test_trgt.pbl";
  "w_remorder_ret.srw" "test_trgt.pbl";
  "d_remorderworks.srd" "test_trgt.pbl";
+ "q_invoice.srq" "test_trgt.pbl";
  "q_queryware.srq" "test_trgt.pbl";
  "d_remorderwrks.srd" "test_trgt.pbl";
+ "d_srcinvdet.srq" "test_trgt.pbl";
  "test_trgt.sra" "test_trgt.pbl";
  "d_remworks.srd" "test_trgt.pbl";
  "remorderworks.srq" "test_trgt.pbl";
  "q_selectworks.srq" "test_trgt.pbl";
+ "n_test_trgt_connectservice.sru" "test_trgt.pbl";
+ "uo_mybuttons.sru" "test_trgt.pbl";
  "m_desc.srm" "test_trgt.pbl";
 @end;
