@@ -22,7 +22,6 @@ Save Format v3.0(19990112)
  "remorderworks.srq" "test_trgt.pbl";
  "q_selectworks.srq" "test_trgt.pbl";
  "n_test_trgt_connectservice.sru" "test_trgt.pbl";
- "uo_pack.sru" "test_trgt.pbl";
  "uo_mybuttons.sru" "test_trgt.pbl";
  "m_desc.srm" "test_trgt.pbl";
 @end;
