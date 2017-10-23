@@ -1,0 +1,2 @@
+HA$PBExportHeader$query_1.srq
+PBSELECT( VERSION(400) TABLE(NAME="RemOrder" ) COLUMN(NAME="RemOrder.Id_RemOrder") COLUMN(NAME="RemOrder.Id_Car") COLUMN(NAME="RemOrder.NoBuh") COLUMN(NAME="RemOrder.DateClose") COLUMN(NAME="RemOrder.DateOpen")WHERE(    EXP1 ="RemOrder.DateClose"   OP =">"    EXP2 ="" ) ) 

@@ -1,0 +1,2 @@
+HA$PBExportHeader$remorder_query.srq
+PBSELECT( VERSION(400) TABLE(NAME="RemOrder" ) COLUMN(NAME="RemOrder.Id_RemOrder") COLUMN(NAME="RemOrder.DateClose") COLUMN(NAME="RemOrder.SumWorks")WHERE(    EXP1 ="RemOrder.DateClose"   OP =">"    EXP2 =" :dt_dateClose" ) ) ARG(NAME = "dt_dateClose" TYPE = datetime) 
