@@ -109,11 +109,23 @@ event clicked;if abs(cb_3.X - xpos) < 20  then
 nearClick = 1  
 	   messagebox("$$HEX6$$1f043e0439043c0430043b04$$ENDHEX$$","$$HEX3$$230440043004$$ENDHEX$$!") 
 end if 
+
+
+if message.ClassDefinition =w_test_toolbar then 
+	
+	return ;
+	
+end if 
+
+
+w_test_toolbar w_win 
+
+openwithparm(w_win,this)
 end event
 
 type dp_1 from datepicker within w_test
-integer x = 1920
-integer y = 1200
+integer x = 562
+integer y = 28
 integer width = 686
 integer height = 100
 integer taborder = 50
@@ -122,7 +134,7 @@ borderstyle borderstyle = stylelowered!
 boolean allowedit = true
 date maxdate = Date("2999-12-31")
 date mindate = Date("1800-01-01")
-datetime value = DateTime(Date("2017-10-12"), Time("14:31:56.000000"))
+datetime value = DateTime(Date("2017-10-23"), Time("11:51:19.000000"))
 integer textsize = -10
 fontcharset fontcharset = russiancharset!
 fontpitch fontpitch = variable!
@@ -205,8 +217,8 @@ boolean focusrectangle = false
 end type
 
 type cb_1 from commandbutton within w_test
-integer x = 1006
-integer y = 400
+integer x = 960
+integer y = 424
 integer width = 1038
 integer height = 120
 integer taborder = 10
