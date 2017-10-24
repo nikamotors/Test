@@ -23,6 +23,7 @@ w_test_toolbar mywin
 
 
 end variables
+
 forward prototypes
 public subroutine f_changeval (window win_param)
 end prototypes
