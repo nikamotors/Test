@@ -1,3 +1,3 @@
 HA$PBExportHeader$query_remorder.srq
 $PBExportComments$select from remorder
-PBSELECT( VERSION(400) TABLE(NAME="RemOrder" ) COLUMN(NAME="RemOrder.Id_RemOrder") COLUMN(NAME="RemOrder.DateClose") COLUMN(NAME="RemOrder.SumWorks") COLUMN(NAME="RemOrder.SumParts")WHERE(    EXP1 ="RemOrder.DateClose"   OP =">"    EXP2 =":dt_dateclose" ) ) ARG(NAME = "dt_dateclose" TYPE = datetime) 
+PBSELECT( VERSION(400) TABLE(NAME="RemOrder" ) COLUMN(NAME="RemOrder.Id_RemOrder") COLUMN(NAME="RemOrder.DateClose") COLUMN(NAME="RemOrder.SumWorks") COLUMN(NAME="RemOrder.SumParts")WHERE(    EXP1 ="RemOrder.DateClose"   OP =">="    EXP2 =":dt_dateclose" ) ) ORDER(NAME="RemOrder.DateClose" ASC=yes ) ARG(NAME = "dt_dateclose" TYPE = datetime) 
