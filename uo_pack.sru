@@ -4,9 +4,8 @@ global type uo_pack from nonvisualobject
 end type
 end forward
 
-global type uo_pack from nonvisualobject
+global type uo_pack from nonvisualobject autoinstantiate
 end type
-global uo_pack uo_pack
 
 forward prototypes
 public function integer adding (integer ai_one, integer ai_two)
@@ -36,4 +35,7 @@ on uo_pack.destroy
 TriggerEvent( this, "destructor" )
 call super::destroy
 end on
+
+event constructor;messagebox("","hello");
+end event
 
