@@ -2,13 +2,15 @@ HA$PBExportHeader$m_menu1.srm
 forward
 global type m_menu1 from menu
 end type
-type m_item1 from menu within m_menu1
+type m_file from menu within m_menu1
 end type
-type m_subitem1 from menu within m_item1
+type m_subitem1_1 from menu within m_file
 end type
-type m_subitem1_2 from menu within m_item1
+type m_subitem1_2_1 from menu within m_file
 end type
-type m_subitem1_3 from menu within m_item1
+type m_subitem1_2 from menu within m_file
+end type
+type m_subitem1_3 from menucascade within m_file
 end type
 type m_subitem1_3_1 from menu within m_subitem1_3
 end type
@@ -16,23 +18,59 @@ type m_0 from menu within m_subitem1_3
 end type
 type m_subitem1_3_3 from menu within m_subitem1_3
 end type
-type m_subitem1_3 from menu within m_item1
+type m_subitem1_3 from menucascade within m_file
 m_subitem1_3_1 m_subitem1_3_1
 m_0 m_0
 m_subitem1_3_3 m_subitem1_3_3
 end type
-type m_item1 from menu within m_menu1
-m_subitem1 m_subitem1
+type m_file from menu within m_menu1
+m_subitem1_1 m_subitem1_1
+m_subitem1_2_1 m_subitem1_2_1
 m_subitem1_2 m_subitem1_2
 m_subitem1_3 m_subitem1_3
 end type
+type m_item2 from menu within m_menu1
+end type
+type m_2 from menu within m_item2
+end type
+type m_subitem1_30 from menucascade within m_item2
+end type
+type m_subitem1_3_10 from menu within m_subitem1_30
+end type
+type m_subitem1_3_2 from menu within m_subitem1_30
+end type
+type m_7 from menu within m_subitem1_30
+end type
+type m_subitem1_30 from menucascade within m_item2
+m_subitem1_3_10 m_subitem1_3_10
+m_subitem1_3_2 m_subitem1_3_2
+m_7 m_7
+end type
+type m_3 from menu within m_item2
+end type
+type m_item2 from menu within m_menu1
+m_2 m_2
+m_subitem1_30 m_subitem1_30
+m_3 m_3
+end type
+type m_item3 from menu within m_menu1
+end type
+type m_item4 from menu within m_menu1
+end type
 global type m_menu1 from menu
-m_item1 m_item1
+m_file m_file
+m_item2 m_item2
+m_item3 m_item3
+m_item4 m_item4
 end type
 end forward
 
 global type m_menu1 from menu
-m_item1 m_item1
+m_file m_file
+m_item2 m_item2
+m_item3 m_item3
+m_item4 m_item4
+event ue_rclick pbm_rbuttondown
 end type
 global m_menu1 m_menu1
 
@@ -49,29 +87,43 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
 this.toolbargradient = true
 this.bitmapgradient = true
-this.m_item1=create m_item1
-this.Item[UpperBound(this.Item)+1]=this.m_item1
+this.m_file=create m_file
+this.m_item2=create m_item2
+this.m_item3=create m_item3
+this.m_item4=create m_item4
+this.Item[UpperBound(this.Item)+1]=this.m_file
+this.Item[UpperBound(this.Item)+1]=this.m_item2
+this.Item[UpperBound(this.Item)+1]=this.m_item3
+this.Item[UpperBound(this.Item)+1]=this.m_item4
 end on
 
 on m_menu1.destroy
 call super::destroy
-destroy(this.m_item1)
+destroy(this.m_file)
+destroy(this.m_item2)
+destroy(this.m_item3)
+destroy(this.m_item4)
 end on
 
-type m_item1 from menu within m_menu1
-m_subitem1 m_subitem1
+type m_file from menu within m_menu1
+m_subitem1_1 m_subitem1_1
+m_subitem1_2_1 m_subitem1_2_1
 m_subitem1_2 m_subitem1_2
 m_subitem1_3 m_subitem1_3
 end type
 
-on m_item1.create
+on m_file.create
 call super::create
-this.text = "item1"
+this.text = "&File"
+this.toolbaritemorder = 1
+this.toolbaritemspace = 8
+this.toolbaritemdown = true
 this.menutextcolor = 134217735
 this.menubackcolor = 134217732
 this.menuhighlightcolor = 134217741
@@ -82,32 +134,40 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
 this.toolbargradient = true
 this.bitmapgradient = true
-this.m_subitem1=create m_subitem1
+this.m_subitem1_1=create m_subitem1_1
+this.m_subitem1_2_1=create m_subitem1_2_1
 this.m_subitem1_2=create m_subitem1_2
 this.m_subitem1_3=create m_subitem1_3
-this.Item[UpperBound(this.Item)+1]=this.m_subitem1
+this.Item[UpperBound(this.Item)+1]=this.m_subitem1_1
+this.Item[UpperBound(this.Item)+1]=this.m_subitem1_2_1
 this.Item[UpperBound(this.Item)+1]=this.m_subitem1_2
 this.Item[UpperBound(this.Item)+1]=this.m_subitem1_3
 end on
 
-on m_item1.destroy
+on m_file.destroy
 call super::destroy
-destroy(this.m_subitem1)
+destroy(this.m_subitem1_1)
+destroy(this.m_subitem1_2_1)
 destroy(this.m_subitem1_2)
 destroy(this.m_subitem1_3)
 end on
 
-type m_subitem1 from menu within m_item1
+type m_subitem1_1 from menu within m_file
 end type
 
-on m_subitem1.create
+on m_subitem1_1.create
 call super::create
-this.text = "subitem1_1"
+this.text = "subitem1_1~tAlt+1"
+this.shortcut = 561
+this.toolbaritemname = "exit!"
+this.toolbaritemtext = "$$HEX5$$12044b04390442043804$$ENDHEX$$,$$HEX5$$32044b0445043e043404$$ENDHEX$$"
+this.toolbaritemorder = 3
 this.menutextcolor = 134217735
 this.menubackcolor = 134217732
 this.menuhighlightcolor = 134217741
@@ -118,6 +178,7 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -125,16 +186,19 @@ this.toolbargradient = true
 this.bitmapgradient = true
 end on
 
-on m_subitem1.destroy
+on m_subitem1_1.destroy
 call super::destroy
 end on
 
-type m_subitem1_2 from menu within m_item1
+event clicked;close(ParentWindow)
+end event
+
+type m_subitem1_2_1 from menu within m_file
 end type
 
-on m_subitem1_2.create
+on m_subitem1_2_1.create
 call super::create
-this.text = "subitem1_2"
+this.text = "subitem1_2_1"
 this.menutextcolor = 134217735
 this.menubackcolor = 134217732
 this.menuhighlightcolor = 134217741
@@ -145,6 +209,37 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_subitem1_2_1.destroy
+call super::destroy
+end on
+
+type m_subitem1_2 from menu within m_file
+end type
+
+on m_subitem1_2.create
+call super::create
+this.text = "subitem1_2~tAlt+2"
+this.shortcut = 562
+this.shifttoright = true
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -156,7 +251,7 @@ on m_subitem1_2.destroy
 call super::destroy
 end on
 
-type m_subitem1_3 from menu within m_item1
+type m_subitem1_3 from menucascade within m_file
 m_subitem1_3_1 m_subitem1_3_1
 m_0 m_0
 m_subitem1_3_3 m_subitem1_3_3
@@ -165,6 +260,10 @@ end type
 on m_subitem1_3.create
 call super::create
 this.text = "subitem1_3"
+this.toolbaritemname = "addwatch5!"
+this.toolbaritemtext = "text123"
+this.toolbaritemdown = true
+this.shifttoright = true
 this.menutextcolor = 134217735
 this.menubackcolor = 134217732
 this.menuhighlightcolor = 134217741
@@ -175,6 +274,7 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -201,6 +301,9 @@ end type
 on m_subitem1_3_1.create
 call super::create
 this.text = "subitem1_3_1"
+this.toolbaritemname = "addwatch!"
+this.toolbaritemdownname = "AddWatch!"
+this.toolbaritemtext = "ttt"
 this.menutextcolor = 134217735
 this.menubackcolor = 134217732
 this.menuhighlightcolor = 134217741
@@ -211,6 +314,7 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -238,6 +342,7 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -265,6 +370,7 @@ this.titlebackcolor = 134217730
 this.bitmapbackcolor = 12632256
 this.menubitmaps = true
 this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
 this.toolbartextcolor = 134217746
 this.toolbarbackcolor = 67108864
 this.toolbarhighlightcolor = 134217741
@@ -273,6 +379,291 @@ this.bitmapgradient = true
 end on
 
 on m_subitem1_3_3.destroy
+call super::destroy
+end on
+
+type m_item2 from menu within m_menu1
+m_2 m_2
+m_subitem1_30 m_subitem1_30
+m_3 m_3
+end type
+
+on m_item2.create
+call super::create
+this.text = "&item2"
+this.shifttoright = true
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_2=create m_2
+this.m_subitem1_30=create m_subitem1_30
+this.m_3=create m_3
+this.Item[UpperBound(this.Item)+1]=this.m_2
+this.Item[UpperBound(this.Item)+1]=this.m_subitem1_30
+this.Item[UpperBound(this.Item)+1]=this.m_3
+end on
+
+on m_item2.destroy
+call super::destroy
+destroy(this.m_2)
+destroy(this.m_subitem1_30)
+destroy(this.m_3)
+end on
+
+type m_2 from menu within m_item2
+end type
+
+on m_2.create
+call super::create
+this.text = "subitem1_1"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_subitem1_30 from menucascade within m_item2
+m_subitem1_3_10 m_subitem1_3_10
+m_subitem1_3_2 m_subitem1_3_2
+m_7 m_7
+end type
+
+on m_subitem1_30.create
+call super::create
+this.text = "subitem1_3"
+this.toolbaritemname = "blob!"
+this.toolbaritemtext = "text0"
+this.toolbaritemorder = 20
+this.toolbaritemdown = true
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_subitem1_3_10=create m_subitem1_3_10
+this.m_subitem1_3_2=create m_subitem1_3_2
+this.m_7=create m_7
+this.Item[UpperBound(this.Item)+1]=this.m_subitem1_3_10
+this.Item[UpperBound(this.Item)+1]=this.m_subitem1_3_2
+this.Item[UpperBound(this.Item)+1]=this.m_7
+end on
+
+on m_subitem1_30.destroy
+call super::destroy
+destroy(this.m_subitem1_3_10)
+destroy(this.m_subitem1_3_2)
+destroy(this.m_7)
+end on
+
+type m_subitem1_3_10 from menu within m_subitem1_30
+end type
+
+on m_subitem1_3_10.create
+call super::create
+this.text = "subitem1_3_1"
+this.toolbaritemtext = "Text1"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_subitem1_3_10.destroy
+call super::destroy
+end on
+
+type m_subitem1_3_2 from menu within m_subitem1_30
+end type
+
+on m_subitem1_3_2.create
+call super::create
+this.text = "subitem1_3_2"
+this.toolbaritemtext = "$$HEX5$$420435043a0441044204$$ENDHEX$$2"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_subitem1_3_2.destroy
+call super::destroy
+end on
+
+type m_7 from menu within m_subitem1_30
+end type
+
+on m_7.create
+call super::create
+this.text = "subitem1_3_3"
+this.toolbaritemtext = "$$HEX5$$420435043a0441044204$$ENDHEX$$3"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_7.destroy
+call super::destroy
+end on
+
+type m_3 from menu within m_item2
+end type
+
+on m_3.create
+call super::create
+this.text = "subitem1_2"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_item3 from menu within m_menu1
+end type
+
+on m_item3.create
+call super::create
+this.text = "i&tem3"
+this.shifttoright = true
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_item3.destroy
+call super::destroy
+end on
+
+type m_item4 from menu within m_menu1
+end type
+
+on m_item4.create
+call super::create
+this.text = "it&em4"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbarstyle = contemporarytoolbar!
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_item4.destroy
 call super::destroy
 end on
 
