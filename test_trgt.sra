@@ -12,6 +12,7 @@ end forward
 
 global type test_trgt from application
 string appname = "test_trgt"
+boolean toolbartext = true
 end type
 global test_trgt test_trgt
 
@@ -32,6 +33,21 @@ destroy(error)
 destroy(message)
 end on
 
-event open;open (w_test)
+event open;// Profile Otradnoe
+SQLCA.DBMS = "SNC SQL Native Client(OLE DB)"
+SQLCA.ServerName = "otrdb"
+SQLCA.AutoCommit = True
+SQLCA.DBParm = "Database='otradnoe',TrustedConnection=1,Provider='SQLNCLI10',BindSPInput=1,TrustServerCertificate=1,ProviderString='DataTypeCompatibility = 0',StaticBind=0"
+
+CONNECT USING sqlca;
+
+IF SQLCA.sqlcode <0 THEN 
+	
+messagebox("Error" ,SQLCA.sqlerrtext)
+ 
+ RETURN
+END IF
+	
+open (w_test_toolbar)
 end event
 
